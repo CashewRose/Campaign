@@ -26,16 +26,7 @@ let elizabeth = {
             december: "27"
         }
     ],
-    volunteer: [
-        {
-            name: "",
-            address: "",
-            email: "",
-            phoneNum: "",
-            availability: "",
-            position: ""
-        }
-    ],
+    volunteers: [],
     biography: "I like to improve things! Thats why we decided to travel dimensions into the geek relm we are today! Help me do that by providing all the memes!",
     photos: [
         {
@@ -48,4 +39,36 @@ let elizabeth = {
     register: ""
 }
 
-alert(elizabeth.statements[0].taxes);
+// alert(elizabeth.statements[0].taxes);
+
+// New object with prototypal constructor function
+const huh = {
+
+    // function to be called, need to call the PROPERTY! 
+    create: function (name, address, email, phoneNum, availability, position) {
+        this.name = name
+        this.address = address,
+        this.email = email,
+        this.phoneNum = phoneNum,
+        this.availability = availability,
+        this.position = position
+        // configurable = true,
+        // writable = true,
+        // enumerable = true
+
+        // Console logs the finished object values
+        console.log(me);
+
+        //pushes the whole object into the array of volunteer
+        elizabeth.volunteers.push(me);
+        
+}
+}
+// Creates the new object and the new name for said object
+let me = Object.create(huh);
+
+// Passes the values into the prototypal constructor function
+me.create("sdfsd", "sdfsd", "sdfsdf", "sdfsdf", "sdfsd", "sdfsdf");
+
+// Reads the name of the first new object (Used to check if it is working correctly)
+alert(elizabeth.volunteers[0].name);
